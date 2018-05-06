@@ -1,4 +1,4 @@
-package Voronoi;
+package Voronoi.utils;
 
 /*
     Class Point represent points on Cartesian coordinate system with integer numbers.

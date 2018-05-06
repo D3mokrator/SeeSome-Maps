@@ -1,4 +1,5 @@
-package Voronoi;
+package Voronoi.Event;
+import Voronoi.utils.Point;
 
 /*
     Site event

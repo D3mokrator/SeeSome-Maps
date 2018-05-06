@@ -1,4 +1,5 @@
-package Voronoi;
+package Voronoi.Event;
+import Voronoi.utils.Point;
 
 /*
     Abstract class Event for implementing sweeping queue and events in Forunne's Algorithm.

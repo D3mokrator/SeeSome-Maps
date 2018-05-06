@@ -1,5 +1,6 @@
 import java.util.HashSet;
-import Voronoi.*;
+
+import Voronoi.utils.Point;
 
 public class Map {
     HashSet<Point> pointSet;
