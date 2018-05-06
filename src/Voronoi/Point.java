@@ -1,6 +1,8 @@
+package Voronoi;
+
 public class Point {
-    private int y;
-    private int x;
+    private Integer y;
+    private Integer x;
 
     public Point() {
         x = 0;
@@ -31,5 +33,12 @@ public class Point {
     public void setXY(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null || getClass() != other.getClass()) return false;
+        if (other == this) return true;
+        return y.equals(((Point) other).y) && x.equals(((Point) other).x);
     }
 }
