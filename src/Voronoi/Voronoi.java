@@ -1,29 +1,27 @@
 package Voronoi;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class Voronoi {
 
     private int MIN_VAL = 0;
-    private int MAX_VAL = 1000;
+    private int MAX_VAL = 2000;
 
     public List<Triangle> triangleList = new ArrayList<Triangle>();
 
-    Voronoi(List<Point> listPoints) {
+    public Voronoi(List<SimplePoint> listPoints) {
 
-        Triangle superTriangle = new Triangle(new Point(MIN_VAL, MIN_VAL), new Point(MAX_VAL, MIN_VAL), new Point(MAX_VAL, MIN_VAL));
+        Triangle superTriangle = new Triangle(new SimplePoint(MIN_VAL, MIN_VAL), new SimplePoint(MAX_VAL, MIN_VAL), new SimplePoint(MAX_VAL, MIN_VAL));
         triangleList.add(superTriangle);
 
-        for (Point point : listPoints) {
+        for (SimplePoint point : listPoints) {
             List<Triangle> badTriangles = new ArrayList<Triangle>();
             for ( Triangle triangle : triangleList)
                 if(superTriangle.containsPoint(point)) badTriangles.add(triangle);
 
-            List<Point> polygon = new ArrayList<Point>();
+            List<SimplePoint> polygon = new ArrayList<SimplePoint>();
 
             for (Triangle tri1 : badTriangles) {
                 boolean shared = false;
