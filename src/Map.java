@@ -66,7 +66,7 @@ class mapDrawing extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         panel.clearPolygons();
-        Tool.fillPanel(this);
+        Tool.fillPanelSqr(this);
         repaint();
     }
 }
@@ -80,7 +80,7 @@ class Tool {
         return (height+32)*256*256;
     }
 
-    static void fillPanel(mapDrawing frame) {
+    static void fillPanelRandom(mapDrawing frame) {
         for(int i = 0, polyCount = ThreadLocalRandom.current().nextInt(1,13); i < polyCount; i++) {
             Polygon poly = new Polygon();
             for(int j = 0, vertex = ThreadLocalRandom.current().nextInt(3,4); j < vertex; j++) {
@@ -89,6 +89,19 @@ class Tool {
             }
         }
     }
+    static void fillPanelSqr(mapDrawing frame) {
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++) {
+                Polygon poly = new Polygon();
+                poly.addPoint(100*i,100*j);
+                poly.addPoint(100*(i+1),100*j);
+                poly.addPoint(100*(i+1),100*(j+1));
+                poly.addPoint(100*i,100*(j+1));
+                frame.panel.addPolygon(poly);
+            }
+        }
+    }
+
 }
 
 public class Map {
@@ -106,6 +119,6 @@ public class Map {
 
     static public void main(String[] args) {
         mapDrawing main = new mapDrawing();
-        Tool.fillPanel(main);
+        Tool.fillPanelSqr(main);
     }
 }
