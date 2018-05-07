@@ -11,6 +11,5 @@ At least two:
 
 #### References
 
-http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation
-
-http://www.ams.org/publicoutreach/feature-column/fcarc-voronoi
+[Procedural map generation example](http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation)  
+[Voronoi's diagram and Fortune's algorithm](http://www.ams.org/publicoutreach/feature-column/fcarc-voronoi)
